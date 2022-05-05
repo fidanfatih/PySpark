@@ -1,6 +1,8 @@
 # https://developer.twitter.com/en/portal/dashboard den Create Project tiklaniyor ve application twitter hesabiniza baglanarak ayarlari yapiliyor
 # pip install tweepy==3.10.0
 
+# python TweetRead.py
+
 import tweepy
 from tweepy import Stream, OAuthHandler
 from tweepy.streaming import StreamListener
@@ -9,10 +11,10 @@ import os
 import socket
 import json
 
-api_key = '1frrzAKEbQSLHAdWkuVm61Xfw'
-api_key_secret ='hRpbgVLBH2gCAqK2hSET9ZC0Dowl6rakh1fZJktTf8OBiH16e4'
-access_token = '1426949257815265288-kIo1ic8o3ZVNlLrQWgZ2MEUjFhqXDT'
-access_secret = 'iK0gbG7tevM5CRpPZG5HTuzEg7uiLhnCmlz1xNRfGUBzJ'
+api_key = 'qAAwbfFy0D8eq63EiFqtIzn7v'
+api_key_secret ='HXoMLa7DZzn6zp5KoXokLOz8OItiMaagpgfS9HeV5sKmom6ATN'
+access_token = '1426949257815265288-91Zvzdhs89u62BYj8OglwkXgtPJFrS'
+access_secret = 'E5XwVdfJp8VvqwcZYafdYr3UaNXv8IDlMnbB4G8WwEIfG'
 
 class TweetsListener(StreamListener):
 
@@ -38,7 +40,7 @@ def sendData(c_socket):
   auth.set_access_token(access_token, access_secret)
 
   twitter_stream = Stream(auth, TweetsListener(c_socket))
-  twitter_stream.filter(track=['trump'])
+  twitter_stream.filter(track=['erdogan'])
 
 if __name__ == "__main__":
   s = socket.socket()         # Create a socket object
